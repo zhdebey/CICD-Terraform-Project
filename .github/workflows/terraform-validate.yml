@@ -10,11 +10,11 @@ on:
         required: false
         default: .
   push:
-    branches: 
-    -main
+    branches:
+      -main
   pull_request:
-    branches: 
-    -main
+    branches:
+      -main
 
 jobs:
   tf_code_check:
