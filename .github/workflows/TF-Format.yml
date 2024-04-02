@@ -13,9 +13,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Terraform Format
-      uses: hashicorp/setup-terraform@v3
-      run: terraforn fmt -check
+    - name: terraform
+      uses: hashicorp/setup-terraform@v3/terraforn fmt -check
       continue-on-error: true
 
 
