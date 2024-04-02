@@ -8,13 +8,12 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
-    name: Check Terraform files are formatted correctly
     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
     - name: terraform
-      uses: hashicorp/setup-terraform@v3/terraforn fmt -check
-      continue-on-error: true
+      uses: hashicorp/setup-terraform@v3
+      run: terraforn fmt -check
 
 
