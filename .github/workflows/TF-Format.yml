@@ -16,6 +16,6 @@ jobs:
       uses: hashicorp/setup-terraform@v3
 
     - name: run fmt
-      run: terraforn fmt -check
+      run: terraform fmt -check
 
 
