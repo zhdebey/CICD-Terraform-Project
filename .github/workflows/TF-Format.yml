@@ -3,7 +3,7 @@ name: Format TF on Push to Main
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   format:
