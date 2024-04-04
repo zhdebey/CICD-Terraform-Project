@@ -35,9 +35,8 @@ jobs:
         aws-region: us-east-1
 
     - name: Terraform Apply
-        id: Apply
-        run: terraform apply -auto-approve
-        
+      run: terraform apply -auto-approve
+
 
 
 
