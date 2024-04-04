@@ -6,7 +6,7 @@ on:
       - dev
 
 jobs:
-  format:
+  format, validate, and apply:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -26,4 +26,18 @@ jobs:
     - name: Terraform validate
       id: validate
       run: terraform validate  
+
+    - name: Configure AWS Credentials Action for Github Actions
+      uses: aws-actions/configure-aws-credentials@v1
+      with: 
+        aws-access-key-id: ${{AWS_ACCESS_KEY_ID}}
+        aws-secret-access-key: ${{AWS_SECRET_ACCESS_KEY}}
+        aws-region: us-east-1
+
+    - name: Terraform Apply
+        id: Apply
+        run: terraform apply -auto-approve
+        
+
+
 
