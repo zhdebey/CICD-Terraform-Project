@@ -6,7 +6,7 @@ on:
       - dev
 
 jobs:
-  format, validate, and apply:
+  format:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
