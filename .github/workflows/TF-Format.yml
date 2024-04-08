@@ -1,4 +1,4 @@
-name: Format TF on Push to Main
+name: Format TF on Push to Dev
 
 on:
   push:
