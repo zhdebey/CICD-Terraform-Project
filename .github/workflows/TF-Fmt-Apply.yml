@@ -1,0 +1,43 @@
+name: Format TF on PR to main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    
+    
+    - name: Configure AWS Credentials Action for Github Actions
+      uses: aws-actions/configure-aws-credentials@v1
+      with: 
+        aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws-region: us-east-1
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform format
+      id: fmt
+      run: terraform fmt -check
+
+    - name: Terraform Init
+      id: init
+      run: terraform init
+
+    - name: Terraform validate
+      id: validate
+      run: terraform validate  
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
+
+
+
