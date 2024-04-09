@@ -1,4 +1,4 @@
-name: Format TF on Push to Dev
+name: Format TF on PR to main
 
 on:
   pull_request:
